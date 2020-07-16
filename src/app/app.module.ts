@@ -13,6 +13,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { HttpClientModule } from '@angular/common/http';
 import { MdlPlayerInfoComponent } from './mdl-player-info/mdl-player-info.component';
 import { MdlPlayerAddEditComponent } from './mdl-player-add-edit/mdl-player-add-edit.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,9 @@ import { MdlPlayerAddEditComponent } from './mdl-player-add-edit/mdl-player-add-
     MaterialModule,
     EterUiModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

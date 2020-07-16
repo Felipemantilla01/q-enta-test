@@ -1,27 +1,90 @@
-
 <div style="display: flex; flex-direction: row-reverse;">
-    <mat-icon mat-dialog-close matRipple class="felipe-action-button mat-elevation-z5" matRippleColor="rgba(251,194,0,0.8)">cancel</mat-icon>
+    <mat-icon mat-dialog-close matRipple class="felipe-action-button mat-elevation-z5"
+        matRippleColor="rgba(251,194,0,0.8)">cancel</mat-icon>
 </div>
 <div>
-    <strong><h4 style="text-align: center; margin: 0;">Add new player</h4></strong>
+    <strong>
+        <h2 *ngIf="data.action=='add'" style="text-align: center; margin: 0;">Add new player</h2>
+        <h2 *ngIf="data.action=='edit'" style="text-align: center; margin: 0;">Edit player</h2>
+    </strong>
 
-        <mat-tab-group mat-align-tabs="center">
-            <mat-tab label="Player"> 
-                <div style="min-height: 30vh; display: flex; justify-content: space-around; flex-direction: column; align-items: center;">
-                   
-                </div>  
-            </mat-tab>
-            <mat-tab label="Team">
-                <div style="min-height: 30vh; display: flex; justify-content: space-around; align-items: center;">
-                    <div style="display: flex; flex-direction: column;">
-                        
-                    </div>
-                    <div style="display: flex; flex-direction: column;">
-                        
-                    </div>
-                </div>    
-            </mat-tab>
-        </mat-tab-group>
+    <form action="" [formGroup]='playerForm' autocomplete="off">
+    <mat-tab-group mat-align-tabs="center">
+        <mat-tab label="Player">
+            <div
+                style=" padding:10px;min-height: 30vh; width: 100%; display: flex; justify-content: space-around; flex-direction: column; align-items: center;">
 
-    
+                <mat-form-field>
+                    <input #first_name formControlName='first_name' maxlength='40' required matInput
+                        [placeholder]=' "First Name"' />
+                    <mat-hint>{{first_name.value.length}}/40</mat-hint>
+                    <mat-error>Required field</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input #last_name formControlName='last_name' maxlength='40' required matInput
+                        [placeholder]=' "Last Name"' />
+                    <mat-hint>{{last_name.value.length}}/40</mat-hint>
+                    <mat-error>Required field</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input type='number' #height_feet formControlName='height_feet'
+                        oninput='this.value = this.value.slice(0,2)'  matInput
+                        [placeholder]=' "Height feet"' />
+                    <mat-hint>{{height_feet.value.length}}/4</mat-hint>
+                    <mat-error>Required field</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input type='number' #height_inches formControlName='height_inches'
+                        oninput='this.value = this.value.slice(0,2)'  matInput
+                        [placeholder]=' "Height inches"' />
+                    <mat-hint>{{height_inches.value.length}}/4</mat-hint>
+                    <mat-error>Required field</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input type='number' #weight_pounds formControlName='weight_pounds'
+                        oninput='this.value = this.value.slice(0,4)'  matInput
+                        [placeholder]=' "Weight pounds"' />
+                    <mat-hint>{{weight_pounds.value.length}}/4</mat-hint>
+                    <mat-error>Required field</mat-error>
+                </mat-form-field>
+                
+
+
+            </div>
+        </mat-tab>
+        <mat-tab label="Team">
+            <div style=" padding:10px;min-height: 30vh; width: 100%; display: flex; justify-content: space-around; flex-direction: column; align-items: center;">
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Team</mat-label>
+                    <mat-select [value]="teamId" (selectionChange)="onChange('teamId',$event)">
+                      <mat-option *ngFor="let team of teams" [value]="team.id">
+                        {{team.full_name}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <mat-form-field appearance="fill">
+                    <mat-label>Position</mat-label>
+                    <mat-select [value]="position" (selectionChange)="onChange('position',$event)">
+                      <mat-option value="P">P</mat-option>
+                      <mat-option value="G">G</mat-option>
+                      <mat-option value="F">F</mat-option>
+                      <mat-option value="C">C</mat-option>
+                      <mat-option value="F-C">F-C</mat-option>
+                      <mat-option value="C-F">C-F</mat-option>
+                      <mat-option value="F-G">F-G</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+    <button mat-raised-button color="primary" (click)="submit()" style="width: 100%;">Guardar</button>
+    </form>
+
 </div>

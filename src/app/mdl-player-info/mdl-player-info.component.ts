@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-mdl-player-info',
@@ -10,8 +11,10 @@ export class MdlPlayerInfoComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<MdlPlayerInfoComponent>,
-    @Inject(MAT_DIALOG_DATA) public data
+    @Inject(MAT_DIALOG_DATA) public data,    
   ) { }
+
+
 
   ngOnInit(): void {
     console.log(this.data)

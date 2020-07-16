@@ -128,7 +128,7 @@ export class PlayerListComponent implements OnInit, AfterViewInit {
     switch(type){
       case 'add':
         this.dialog.open(MdlPlayerAddEditComponent,{
-          width: '80vh',
+          width: '70vh',
           data:{
             action:type,
             info:''
@@ -137,13 +137,43 @@ export class PlayerListComponent implements OnInit, AfterViewInit {
       break;
 
       case 'edit':
-
+        this.dialog.open(MdlPlayerAddEditComponent,{
+          width: '70vh',
+          data:{
+            action:type,
+            info:this.selection.selected[0]
+          }
+        })
       break;
 
       case 'delete':
 
+
+      /** @DELETE PETICION AL SERVIDOR PARA ELIMINAR UNO O MAS JUGADORES  */
+      /*let responses = []
+      let errors = []
+      this.selection.selected.forEach(player=>{
+        this.http.delete(`${environment.endpoint}/players/${player.id}`).subscribe(
+          res=>responses.push(res),
+          err=>errors.push(err)
+        )
+      })
+      this.message.Info('Delete counter', `Deleted players:${responses.length} Errors : ${errors.length}`)*/
+
+      this.message.SuccessToast(`Deleted ${this.selection.selected.length} players correctly`,3000)
+      this.downloadObjectAsJson(this.selection.selected,`${type}-${this.selection.selected.length}-Player(s)`)
+
       break;
     }
+  }
+
+  downloadObjectAsJson(exportObj, exportName){
+    var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportObj));
+    var downloadAnchorNode = document.createElement('a');
+    downloadAnchorNode.setAttribute("href",     dataStr);
+    downloadAnchorNode.setAttribute("download", exportName + ".json");
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
   }
 
 }

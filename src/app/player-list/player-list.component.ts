@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import { SelectionModel } from '@angular/cdk/collections';
 
 @Component({
   selector: 'app-player-list',
@@ -55,7 +56,7 @@ export class PlayerListComponent implements OnInit, AfterViewInit {
 
 
   callApi(){
-    
+
     this.http.get(`${environment.endpoint}/players?page=${this.page+1}&per_page=${this.pageSize}`).subscribe(
       res=>{
         console.log(res)
@@ -69,6 +70,12 @@ export class PlayerListComponent implements OnInit, AfterViewInit {
       }
     )
   }
+
+
+  selection(element){
+    console.log(element)
+  }
+
 
 }
 

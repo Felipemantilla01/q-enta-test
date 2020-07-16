@@ -133,6 +133,8 @@ export class PlayerListComponent implements OnInit, AfterViewInit {
             action:type,
             info:''
           }
+        }).afterClosed().subscribe(res=>{
+          this.callApi()
         })
       break;
 
@@ -143,6 +145,8 @@ export class PlayerListComponent implements OnInit, AfterViewInit {
             action:type,
             info:this.selection.selected[0]
           }
+        }).afterClosed().subscribe(res=>{
+          this.callApi()
         })
       break;
 
@@ -163,6 +167,7 @@ export class PlayerListComponent implements OnInit, AfterViewInit {
       this.message.SuccessToast(`Deleted ${this.selection.selected.length} players correctly`,3000)
       this.downloadObjectAsJson(this.selection.selected,`${type}-${this.selection.selected.length}-Player(s)`)
 
+      this.callApi()
       break;
     }
   }

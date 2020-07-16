@@ -24,9 +24,12 @@
     "@angular/router": "~9.1.7",
     "@ng-bootstrap/ng-bootstrap": "^6.0.0",
     "bootstrap": "^4.4.0",
+    "colors": "^1.4.0",
     "eter-ui": "0.0.9",
+    "express": "^4.17.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
+    "yargs": "^15.4.1",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {

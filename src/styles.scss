@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+
+.breadcrumb{    
+    cursor: pointer;
+}
+
+.confirm-button-class {
+  background-color:#8bc53f !important;
+  font-family: Roboto, "Helvetica Neue", sans-serif !important;
+}
+
+.cancel-button-class{
+  background-color: white !important;
+  color: #3f51b5 !important;
+  font-family: Roboto, "Helvetica Neue", sans-serif !important;
+  border-color: black !important;
+  border-style: solid !important;
+  border-width: 1px !important;
+}

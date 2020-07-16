@@ -1,0 +1,59 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item" routerLink='/'>Home</li>
+        <li class="breadcrumb-item" >Players</li>
+    </ol>
+</nav>
+
+
+<div style="margin-left:15vw; margin-right: 15vw;">
+
+    <h1>Players</h1>
+    <div class="mat-elevation-z8">
+        <mat-form-field>
+            <mat-label>Filter</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="first name, last name, position" #input autocomplete="off">
+          </mat-form-field>
+
+          <div class="table-container">
+              <table mat-table [dataSource]="dataSource">
+            
+                <!-- Position Column -->
+                <ng-container matColumnDef="first_name">
+                  <th mat-header-cell *matHeaderCellDef> First Name </th>
+                  <td mat-cell *matCellDef="let element"> {{element.first_name}} </td>
+                </ng-container>
+            
+                <!-- Name Column -->
+                <ng-container matColumnDef="last_name">
+                  <th mat-header-cell *matHeaderCellDef> Last Name </th>
+                  <td mat-cell *matCellDef="let element"> {{element.last_name}} </td>
+                </ng-container>
+            
+                <!-- Weight Column -->
+                <ng-container matColumnDef="team">
+                  <th mat-header-cell *matHeaderCellDef> Team </th>
+                  <td mat-cell *matCellDef="let element"> {{element.team.full_name}} </td>
+                </ng-container>
+            
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="position">
+                  <th mat-header-cell *matHeaderCellDef> Position </th>
+                  <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                </ng-container>
+            
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+          </div>
+        
+      
+        <mat-paginator
+        [length]="length"
+        [pageSize]="pageSize"
+        [pageSizeOptions]="pageSizeOptions"
+        showFirstLastButtons 
+        (page)="change($event)"></mat-paginator>
+      </div>
+
+</div>

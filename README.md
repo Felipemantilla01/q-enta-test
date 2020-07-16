@@ -43,6 +43,7 @@ node server.js
 por defecto correra en el puerto 3250, pero si desea que se ejecute en otro puerto puede ejecutar el script con el argumento port 
 ```
 node server.js --port <port>
+Ejemplo: node server.js --port 3500
 ```
 
 

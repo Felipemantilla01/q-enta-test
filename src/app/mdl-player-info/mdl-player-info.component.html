@@ -1,0 +1,32 @@
+<div style="display: flex; flex-direction: row-reverse;">
+    <mat-icon mat-dialog-close matRipple class="felipe-action-button mat-elevation-z5" matRippleColor="rgba(251,194,0,0.8)">cancel</mat-icon>
+</div>
+<div>
+    <strong><h1 style="text-align: center; margin: 0;">{{data.first_name}} {{data.last_name}}</h1></strong>
+    
+        <mat-tab-group mat-align-tabs="center">
+            <mat-tab label="Player"> 
+                <div style="min-height: 15vh; display: flex; justify-content: space-around; flex-direction: column; align-items: center;">
+                    <div><strong>Height feets:</strong> {{data.height_feet}} </div>
+                    <div><strong>Height inches:</strong> {{data.height_inches}} </div>
+                    <div><strong>Position:</strong> {{data.position}}  </div>
+                </div>  
+            </mat-tab>
+            <mat-tab label="Team">
+                <div style="min-height: 15vh; display: flex; justify-content: space-around; align-items: center;">
+                    <div style="display: flex; flex-direction: column;">
+                        <div><strong>Full name: </strong> {{data.team.full_name}} </div>
+                        <div><strong>Abreviation: </strong> {{data.team.abbreviation}} </div>
+                        <div><strong>City: </strong> {{data.team.city}} </div>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <div><strong>Name: </strong> {{data.team.name}}  </div>
+                        <div><strong>Conference: </strong> {{data.team.conference}}  </div>
+                        <div><strong>Division: </strong> {{data.team.division}} </div>
+                    </div>
+                </div>    
+            </mat-tab>
+        </mat-tab-group>
+
+    
+</div>

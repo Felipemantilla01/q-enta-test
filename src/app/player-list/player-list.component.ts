@@ -5,6 +5,9 @@ import { environment } from 'src/environments/environment';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { SelectionModel } from '@angular/cdk/collections';
+import { MatDialog } from '@angular/material/dialog';
+import { MdlPlayerInfoComponent } from '../mdl-player-info/mdl-player-info.component';
+import { MdlPlayerAddEditComponent } from '../mdl-player-add-edit/mdl-player-add-edit.component';
 
 @Component({
   selector: 'app-player-list',
@@ -21,14 +24,17 @@ export class PlayerListComponent implements OnInit, AfterViewInit {
   pageSizeOptions: number[] = [5, 10, 25, 100];
   page
 
-  displayedColumns: string[] = ['first_name', 'last_name', 'team', 'position'];
+  selection = new SelectionModel(true, []);
+
+  displayedColumns: string[] = ['select','first_name', 'last_name', 'team', 'position'];
   dataSource 
   
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
   constructor(
     private http : HttpClient,
-    private message : MessageService
+    private message : MessageService,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -51,6 +57,7 @@ export class PlayerListComponent implements OnInit, AfterViewInit {
     this.pageSize = $event.pageSize
     this.page = $event.pageIndex
 
+    this.selection.clear()
     this.callApi()
   }
 
@@ -72,10 +79,72 @@ export class PlayerListComponent implements OnInit, AfterViewInit {
   }
 
 
-  selection(element){
+  selectionRow(element){
     console.log(element)
+    this.message.InfoToast('Loading player info...',1000)
+    this.http.get(`${environment.endpoint}/players/${element.id}`).subscribe(
+      res=>{
+        // this.message.SuccessToast('Correct!',1000)
+        this.dialog.open(MdlPlayerInfoComponent, {
+          width: '60vh',
+          data:res
+        })
+      },
+      err=>{
+        this.message.Error('Error!', err.message)
+      }
+    )
+
+
+
+    
   }
 
+  isAllSelected() {
+    if(this.dataSource){
+      const numSelected = this.selection.selected.length;
+      const numRows = this.dataSource.data.length;
+      return numSelected === numRows;
+    }else{
+      return 0
+    }
+  }
+
+
+  masterToggle() {
+    this.isAllSelected() ?
+        this.selection.clear() :
+        this.dataSource.data.forEach(row => this.selection.select(row));
+  }
+
+  checkboxLabel(row?): string {
+    if (!row) {
+      return `${this.isAllSelected() ? 'select' : 'deselect'} all`;
+    }
+    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;
+  }
+
+  action(type){
+    switch(type){
+      case 'add':
+        this.dialog.open(MdlPlayerAddEditComponent,{
+          width: '80vh',
+          data:{
+            action:type,
+            info:''
+          }
+        })
+      break;
+
+      case 'edit':
+
+      break;
+
+      case 'delete':
+
+      break;
+    }
+  }
 
 }
 

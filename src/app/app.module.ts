@@ -11,13 +11,17 @@ import { PlayerListComponent } from './player-list/player-list.component';
 import { TeamsListComponent } from './teams-list/teams-list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { HttpClientModule } from '@angular/common/http';
+import { MdlPlayerInfoComponent } from './mdl-player-info/mdl-player-info.component';
+import { MdlPlayerAddEditComponent } from './mdl-player-add-edit/mdl-player-add-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeScreenComponent,
     PlayerListComponent,
-    TeamsListComponent
+    TeamsListComponent,
+    MdlPlayerInfoComponent,
+    MdlPlayerAddEditComponent
   ],
   imports: [
     BrowserModule,

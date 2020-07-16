@@ -24,6 +24,8 @@ export class PlayerListComponent implements OnInit, AfterViewInit {
   pageSizeOptions: number[] = [5, 10, 25, 100];
   page
 
+  masterTog
+
   selection = new SelectionModel(true, []);
 
   displayedColumns: string[] = ['select','first_name', 'last_name', 'team', 'position'];
@@ -58,12 +60,15 @@ export class PlayerListComponent implements OnInit, AfterViewInit {
     this.page = $event.pageIndex
 
     this.selection.clear()
+    this.masterTog = false
     this.callApi()
   }
 
 
   callApi(){
 
+    this.masterTog = false
+    this.selection.clear()
     this.http.get(`${environment.endpoint}/players?page=${this.page+1}&per_page=${this.pageSize}`).subscribe(
       res=>{
         console.log(res)

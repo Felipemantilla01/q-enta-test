@@ -2000,6 +2000,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var ctx_r24 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
           return $event ? ctx_r24.masterToggle() : null;
+        })("valueChange", function PlayerListComponent_th_23_Template_mat_checkbox_valueChange_1_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r25);
+
+          var ctx_r26 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          return ctx_r26.masterTog = $event;
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -2012,30 +2018,30 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("checked", ctx_r6.selection.hasValue() && ctx_r6.isAllSelected())("indeterminate", ctx_r6.selection.hasValue() && !ctx_r6.isAllSelected())("aria-label", ctx_r6.checkboxLabel());
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("checked", ctx_r6.selection.hasValue() && ctx_r6.isAllSelected())("indeterminate", ctx_r6.selection.hasValue() && !ctx_r6.isAllSelected())("aria-label", ctx_r6.checkboxLabel())("value", ctx_r6.masterTog);
       }
     }
 
     function PlayerListComponent_td_24_Template(rf, ctx) {
       if (rf & 1) {
-        var _r28 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        var _r29 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 35);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-checkbox", 36);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function PlayerListComponent_td_24_Template_mat_checkbox_click_1_listener($event) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r28);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r29);
 
           return $event.stopPropagation();
         })("change", function PlayerListComponent_td_24_Template_mat_checkbox_change_1_listener($event) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r28);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r29);
 
-          var row_r26 = ctx.$implicit;
+          var row_r27 = ctx.$implicit;
 
-          var ctx_r29 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r30 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return $event ? ctx_r29.selection.toggle(row_r26) : null;
+          return $event ? ctx_r30.selection.toggle(row_r27) : null;
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -2044,13 +2050,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       if (rf & 2) {
-        var row_r26 = ctx.$implicit;
+        var row_r27 = ctx.$implicit;
 
         var ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("checked", ctx_r7.selection.isSelected(row_r26))("aria-label", ctx_r7.checkboxLabel(row_r26));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("checked", ctx_r7.selection.isSelected(row_r27))("aria-label", ctx_r7.checkboxLabel(row_r27));
       }
     }
 
@@ -2066,18 +2072,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     function PlayerListComponent_td_27_Template(rf, ctx) {
       if (rf & 1) {
-        var _r32 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        var _r33 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 37);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function PlayerListComponent_td_27_Template_td_click_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r32);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r33);
 
-          var element_r30 = ctx.$implicit;
+          var element_r31 = ctx.$implicit;
 
-          var ctx_r31 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r32 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r31.selectionRow(element_r30);
+          return ctx_r32.selectionRow(element_r31);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
@@ -2086,11 +2092,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       if (rf & 2) {
-        var element_r30 = ctx.$implicit;
+        var element_r31 = ctx.$implicit;
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", element_r30.first_name, " ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", element_r31.first_name, " ");
       }
     }
 
@@ -2106,18 +2112,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     function PlayerListComponent_td_30_Template(rf, ctx) {
       if (rf & 1) {
-        var _r35 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        var _r36 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 37);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function PlayerListComponent_td_30_Template_td_click_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r36);
 
-          var element_r33 = ctx.$implicit;
+          var element_r34 = ctx.$implicit;
 
-          var ctx_r34 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r35 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r34.selectionRow(element_r33);
+          return ctx_r35.selectionRow(element_r34);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
@@ -2126,11 +2132,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       if (rf & 2) {
-        var element_r33 = ctx.$implicit;
+        var element_r34 = ctx.$implicit;
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", element_r33.last_name, " ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", element_r34.last_name, " ");
       }
     }
 
@@ -2146,18 +2152,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     function PlayerListComponent_td_33_Template(rf, ctx) {
       if (rf & 1) {
-        var _r38 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        var _r39 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 37);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function PlayerListComponent_td_33_Template_td_click_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r38);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r39);
 
-          var element_r36 = ctx.$implicit;
+          var element_r37 = ctx.$implicit;
 
-          var ctx_r37 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r38 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r37.selectionRow(element_r36);
+          return ctx_r38.selectionRow(element_r37);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
@@ -2166,11 +2172,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       if (rf & 2) {
-        var element_r36 = ctx.$implicit;
+        var element_r37 = ctx.$implicit;
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", element_r36.team.full_name, " ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", element_r37.team.full_name, " ");
       }
     }
 
@@ -2186,18 +2192,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     function PlayerListComponent_td_36_Template(rf, ctx) {
       if (rf & 1) {
-        var _r41 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        var _r42 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 37);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function PlayerListComponent_td_36_Template_td_click_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r41);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r42);
 
-          var element_r39 = ctx.$implicit;
+          var element_r40 = ctx.$implicit;
 
-          var ctx_r40 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r41 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r40.selectionRow(element_r39);
+          return ctx_r41.selectionRow(element_r40);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
@@ -2206,11 +2212,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       if (rf & 2) {
-        var element_r39 = ctx.$implicit;
+        var element_r40 = ctx.$implicit;
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", element_r39.position, " ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", element_r40.position, " ");
       }
     }
 
@@ -2262,6 +2268,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.pageSize = $event.pageSize;
           this.page = $event.pageIndex;
           this.selection.clear();
+          this.masterTog = false;
           this.callApi();
         }
       }, {
@@ -2269,6 +2276,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function callApi() {
           var _this2 = this;
 
+          this.masterTog = false;
+          this.selection.clear();
           this.http.get("".concat(src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].endpoint, "/players?page=").concat(this.page + 1, "&per_page=").concat(this.pageSize)).subscribe(function (res) {
             console.log(res);
             _this2.ELEMENT_DATA = res['data'];
@@ -2407,7 +2416,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       },
       decls: 40,
       vars: 11,
-      consts: [["aria-label", "breadcrumb"], [1, "breadcrumb"], ["routerLink", "/", 1, "breadcrumb-item"], [1, "breadcrumb-item"], [2, "margin-left", "15vw", "margin-right", "15vw"], [2, "display", "flex", "justify-content", "space-between"], ["style", "margin: 0;", 4, "ngIf"], ["style", "margin: 0; font-size: 15px;", 4, "ngIf"], [2, "display", "flex", "flex-direction", "row"], ["class", "mat-elevation-z3 felipe-action-button", "matRipple", "", "matRippleColor", "rgba(139,197,63,0.8)", 3, "click", 4, "ngIf"], ["class", "mat-elevation-z3 felipe-action-button", "matRipple", "", "matRippleColor", "rgba(63,81,181,0.8)", 3, "click", 4, "ngIf"], ["class", "mat-elevation-z3 felipe-action-button", "matRipple", "", "matRippleColor", "rgba(251,194,0,0.8)", 3, "click", 4, "ngIf"], [1, "mat-elevation-z8"], ["matInput", "", "placeholder", "first name, last name, position", "autocomplete", "off", 3, "keyup"], ["input", ""], [1, "table-container"], ["mat-table", "", 3, "dataSource"], ["matColumnDef", "select"], ["mat-header-cell", "", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["matColumnDef", "first_name"], ["mat-cell", "", 3, "click", 4, "matCellDef"], ["matColumnDef", "last_name"], ["matColumnDef", "team"], ["matColumnDef", "position"], ["mat-header-row", "", 4, "matHeaderRowDef"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], ["showFirstLastButtons", "", 3, "length", "pageSize", "pageSizeOptions", "page"], [2, "margin", "0"], [2, "margin", "0", "font-size", "15px"], ["matRipple", "", "matRippleColor", "rgba(139,197,63,0.8)", 1, "mat-elevation-z3", "felipe-action-button", 3, "click"], ["matRipple", "", "matRippleColor", "rgba(63,81,181,0.8)", 1, "mat-elevation-z3", "felipe-action-button", 3, "click"], ["matRipple", "", "matRippleColor", "rgba(251,194,0,0.8)", 1, "mat-elevation-z3", "felipe-action-button", 3, "click"], ["mat-header-cell", ""], ["color", "primary", 3, "checked", "indeterminate", "aria-label", "change"], ["mat-cell", ""], ["color", "primary", 3, "checked", "aria-label", "click", "change"], ["mat-cell", "", 3, "click"], ["mat-header-row", ""], ["mat-row", ""]],
+      consts: [["aria-label", "breadcrumb"], [1, "breadcrumb"], ["routerLink", "/", 1, "breadcrumb-item"], [1, "breadcrumb-item"], [2, "margin-left", "15vw", "margin-right", "15vw"], [2, "display", "flex", "justify-content", "space-between"], ["style", "margin: 0;", 4, "ngIf"], ["style", "margin: 0; font-size: 15px;", 4, "ngIf"], [2, "display", "flex", "flex-direction", "row"], ["class", "mat-elevation-z3 felipe-action-button", "matRipple", "", "matRippleColor", "rgba(139,197,63,0.8)", 3, "click", 4, "ngIf"], ["class", "mat-elevation-z3 felipe-action-button", "matRipple", "", "matRippleColor", "rgba(63,81,181,0.8)", 3, "click", 4, "ngIf"], ["class", "mat-elevation-z3 felipe-action-button", "matRipple", "", "matRippleColor", "rgba(251,194,0,0.8)", 3, "click", 4, "ngIf"], [1, "mat-elevation-z8"], ["matInput", "", "placeholder", "first name, last name, position", "autocomplete", "off", 3, "keyup"], ["input", ""], [1, "table-container"], ["mat-table", "", 3, "dataSource"], ["matColumnDef", "select"], ["mat-header-cell", "", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["matColumnDef", "first_name"], ["mat-cell", "", 3, "click", 4, "matCellDef"], ["matColumnDef", "last_name"], ["matColumnDef", "team"], ["matColumnDef", "position"], ["mat-header-row", "", 4, "matHeaderRowDef"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], ["showFirstLastButtons", "", 3, "length", "pageSize", "pageSizeOptions", "page"], [2, "margin", "0"], [2, "margin", "0", "font-size", "15px"], ["matRipple", "", "matRippleColor", "rgba(139,197,63,0.8)", 1, "mat-elevation-z3", "felipe-action-button", 3, "click"], ["matRipple", "", "matRippleColor", "rgba(63,81,181,0.8)", 1, "mat-elevation-z3", "felipe-action-button", 3, "click"], ["matRipple", "", "matRippleColor", "rgba(251,194,0,0.8)", 1, "mat-elevation-z3", "felipe-action-button", 3, "click"], ["mat-header-cell", ""], ["color", "primary", 3, "checked", "indeterminate", "aria-label", "value", "change", "valueChange"], ["mat-cell", ""], ["color", "primary", 3, "checked", "aria-label", "click", "change"], ["mat-cell", "", 3, "click"], ["mat-header-row", ""], ["mat-row", ""]],
       template: function PlayerListComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nav", 0);
@@ -2476,7 +2485,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](22, 17);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](23, PlayerListComponent_th_23_Template, 2, 3, "th", 18);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](23, PlayerListComponent_th_23_Template, 2, 4, "th", 18);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](24, PlayerListComponent_td_24_Template, 2, 2, "td", 19);
 

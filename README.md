@@ -3,7 +3,13 @@
 La aplicacion esta desarrollada en Angular 8, consulme los servicios expuestos por la rest Api publica 
 [balldontlie][https://www.balldontlie.io/#introduction], esta api no recibe peticiones POST PUT o DELETE 
 por lo cual estas acciones se reflejan en la apliacion en un archivo json que se descarga automaticamente 
-con la informacion de la accion. 
+con la informacion de la accion.
+
+dentro del codigo se encuentra la estructura para el consumo de los metodos no soportados por la api, estan comentados para evitar errores en la consola del navegador.
+
+la apliacion utiliza un modulo de angular llamado eter-ui para facilitar los mensajes informativos, dicho modulo es de autoria mia por lo cual decidi usarlo. [https://www.npmjs.com/package/eter-ui]
+
+espero lo disfruten 
 
 ## Instalar las dependencias del proyecto 
 ```
